@@ -17,7 +17,7 @@
 
 ## 🛡️ About Me
 
-I'm **Stevanus**, also known online as **Nusss0** — a Computer Science student at **Institut Teknologi Bandung** with a strong interest in offensive security.
+I'm **Stevanus** - a Computer Science student at **Institut Teknologi Bandung** with a strong interest in offensive security.
 
 I enjoy understanding how systems work, finding where they break, and turning those findings into practical improvements. My focus is on learning through hands-on labs, responsible testing, and continuous experimentation.
 
