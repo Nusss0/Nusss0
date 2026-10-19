@@ -1,0 +1,123 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 310" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sysBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b0f19" />
+      <stop offset="100%" stop-color="#111827" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .mono {
+      font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace;
+    }
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    .dot-pulse {
+      animation: pulse 2.5s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+
+  <!-- Outer Frame -->
+  <rect x="2" y="2" width="916" height="306" rx="10" fill="url(#sysBg)" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Header -->
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="bold" class="mono">
+    SYSTEMS &amp; ALGORITHMIC ENGINEERING // ARCHITECTURE MATRIX
+  </text>
+  <text x="896" y="33" text-anchor="end" fill="#818cf8" font-size="11" class="mono">C++17 · C · Go · TypeScript · Java · Python</text>
+  <line x1="24" y1="48" x2="896" y2="48" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Row 1, Card 1: Arion Compiler -->
+  <g transform="translate(24, 62)">
+    <rect x="0" y="0" width="278" height="108" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <circle cx="258" cy="20" r="4" fill="#38bdf8" class="dot-pulse" />
+    <text x="14" y="24" fill="#38bdf8" font-size="12.5" font-weight="bold" class="mono">Arion Language Compiler</text>
+    <text x="14" y="44" fill="#cbd5e1" font-size="11" class="sans">DFA Lexer → Recursive Descent Parser</text>
+    <text x="14" y="60" fill="#cbd5e1" font-size="11" class="sans">→ Decorated AST &amp; Symbol Tables</text>
+    <rect x="14" y="76" width="52" height="20" rx="4" fill="#1e293b" />
+    <text x="40" y="90" text-anchor="middle" fill="#38bdf8" font-size="10.5" class="mono">C++17</text>
+    <rect x="72" y="76" width="110" height="20" rx="4" fill="#1e293b" />
+    <text x="127" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">tab / btab / atab</text>
+  </g>
+
+  <!-- Row 1, Card 2: 3D Mesh Voxelizer -->
+  <g transform="translate(321, 62)">
+    <rect x="0" y="0" width="278" height="108" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <circle cx="258" cy="20" r="4" fill="#818cf8" class="dot-pulse" />
+    <text x="14" y="24" fill="#818cf8" font-size="12.5" font-weight="bold" class="mono">3D Surface Voxelizer</text>
+    <text x="14" y="44" fill="#cbd5e1" font-size="11" class="sans">Octree spatial partitioning with SAT</text>
+    <text x="14" y="60" fill="#cbd5e1" font-size="11" class="sans">collision pruning &amp; 3D rasterizer</text>
+    <rect x="14" y="76" width="52" height="20" rx="4" fill="#1e293b" />
+    <text x="40" y="90" text-anchor="middle" fill="#818cf8" font-size="10.5" class="mono">C++17</text>
+    <rect x="72" y="76" width="54" height="20" rx="4" fill="#1e293b" />
+    <text x="99" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">SFML</text>
+    <rect x="132" y="76" width="64" height="20" rx="4" fill="#1e293b" />
+    <text x="164" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">Octree</text>
+  </g>
+
+  <!-- Row 1, Card 3: Judol Detector Extension -->
+  <g transform="translate(618, 62)">
+    <rect x="0" y="0" width="278" height="108" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <circle cx="258" cy="20" r="4" fill="#34d399" class="dot-pulse" />
+    <text x="14" y="24" fill="#34d399" font-size="12.5" font-weight="bold" class="mono">Judol Detector Extension</text>
+    <text x="14" y="44" fill="#cbd5e1" font-size="11" class="sans">KMP, Boyer-Moore, Aho-Corasick,</text>
+    <text x="14" y="60" fill="#cbd5e1" font-size="11" class="sans">Rabin-Karp, Levenshtein &amp; Image OCR</text>
+    <rect x="14" y="76" width="76" height="20" rx="4" fill="#1e293b" />
+    <text x="52" y="90" text-anchor="middle" fill="#34d399" font-size="10.5" class="mono">TypeScript</text>
+    <rect x="96" y="76" width="54" height="20" rx="4" fill="#1e293b" />
+    <text x="123" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">React</text>
+    <rect x="156" y="76" width="52" height="20" rx="4" fill="#1e293b" />
+    <text x="182" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">MV3</text>
+  </g>
+
+  <!-- Row 2, Card 4: Ice Sliding & N-Queens Solvers -->
+  <g transform="translate(24, 184)">
+    <rect x="0" y="0" width="278" height="108" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <circle cx="258" cy="20" r="4" fill="#f59e0b" class="dot-pulse" />
+    <text x="14" y="24" fill="#fbbf24" font-size="12.5" font-weight="bold" class="mono">Search &amp; Constraint Solvers</text>
+    <text x="14" y="44" fill="#cbd5e1" font-size="11" class="sans">Ice Sliding (UCS, GBFS, A* in raylib)</text>
+    <text x="14" y="60" fill="#cbd5e1" font-size="11" class="sans">&amp; Region N-Queens (Backtracking)</text>
+    <rect x="14" y="76" width="52" height="20" rx="4" fill="#1e293b" />
+    <text x="40" y="90" text-anchor="middle" fill="#fbbf24" font-size="10.5" class="mono">C++17</text>
+    <rect x="72" y="76" width="58" height="20" rx="4" fill="#1e293b" />
+    <text x="101" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">raylib</text>
+    <rect x="136" y="76" width="54" height="20" rx="4" fill="#1e293b" />
+    <text x="163" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">SFML</text>
+  </g>
+
+  <!-- Row 2, Card 5: DOM Traversal & Full-Stack -->
+  <g transform="translate(321, 184)">
+    <rect x="0" y="0" width="278" height="108" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <circle cx="258" cy="20" r="4" fill="#22d3ee" class="dot-pulse" />
+    <text x="14" y="24" fill="#22d3ee" font-size="12.5" font-weight="bold" class="mono">DOM Tree Traversal App</text>
+    <text x="14" y="44" fill="#cbd5e1" font-size="11" class="sans">Concurrent graph traversal backend</text>
+    <text x="14" y="60" fill="#cbd5e1" font-size="11" class="sans">in Go with TypeScript UI &amp; Docker</text>
+    <rect x="14" y="76" width="42" height="20" rx="4" fill="#1e293b" />
+    <text x="35" y="90" text-anchor="middle" fill="#22d3ee" font-size="10.5" class="mono">Go</text>
+    <rect x="62" y="76" width="76" height="20" rx="4" fill="#1e293b" />
+    <text x="100" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">TypeScript</text>
+    <rect x="144" y="76" width="60" height="20" rx="4" fill="#1e293b" />
+    <text x="174" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">Docker</text>
+  </g>
+
+  <!-- Row 2, Card 6: Battlecode & Low-Level C -->
+  <g transform="translate(618, 184)">
+    <rect x="0" y="0" width="278" height="108" rx="8" fill="#0f172a" stroke="#1e293b" stroke-width="1" />
+    <circle cx="258" cy="20" r="4" fill="#f43f5e" class="dot-pulse" />
+    <text x="14" y="24" fill="#fb7185" font-size="12.5" font-weight="bold" class="mono">Battlecode &amp; C Systems</text>
+    <text x="14" y="44" fill="#cbd5e1" font-size="11" class="sans">Autonomous Bug2 multi-agent bots</text>
+    <text x="14" y="60" fill="#cbd5e1" font-size="11" class="sans">&amp; Custom C Abstract Data Types CLI</text>
+    <rect x="14" y="76" width="48" height="20" rx="4" fill="#1e293b" />
+    <text x="38" y="90" text-anchor="middle" fill="#fb7185" font-size="10.5" class="mono">Java</text>
+    <rect x="68" y="76" width="46" height="20" rx="4" fill="#1e293b" />
+    <text x="91" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">C99</text>
+    <rect x="120" y="76" width="62" height="20" rx="4" fill="#1e293b" />
+    <text x="151" y="90" text-anchor="middle" fill="#94a3b8" font-size="10.5" class="mono">Python</text>
+  </g>
+</svg>
+

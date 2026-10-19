@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 270" width="100%" height="100%">
+  <defs>
+    <linearGradient id="cardBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0d1322" />
+      <stop offset="100%" stop-color="#131c31" />
+    </linearGradient>
+    <linearGradient id="accentCyan" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#38bdf8" />
+    </linearGradient>
+    <linearGradient id="accentGreen" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981" />
+      <stop offset="100%" stop-color="#34d399" />
+    </linearGradient>
+    <linearGradient id="accentPurple" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="100%" stop-color="#a855f7" />
+    </linearGradient>
+  </defs>
+
+  <style>
+    .mono {
+      font-family: 'JetBrains Mono', 'Fira Code', 'SFMono-Regular', Consolas, monospace;
+    }
+    .sans {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    }
+    .pulse {
+      animation: pulse 2.4s ease-in-out infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+  </style>
+
+  <!-- Main Container -->
+  <rect x="2" y="2" width="916" height="266" rx="10" fill="url(#cardBg)" stroke="#1e293b" stroke-width="1.5" />
+
+  <!-- Section Header -->
+  <text x="24" y="34" fill="#f8fafc" font-size="15" font-weight="bold" class="mono">
+    OFFSECVAULT // WRITE-UPS &amp; RESEARCH TELEMETRY
+  </text>
+  <circle cx="890" cy="29" r="4.5" fill="#22d3ee" class="pulse" />
+  <text x="876" y="33" text-anchor="end" fill="#38bdf8" font-size="11" class="mono">SuperNote/Vault</text>
+  <line x1="24" y1="48" x2="896" y2="48" stroke="#1e293b" stroke-width="1" />
+
+  <!-- Card 1: Binary Exploitation & Wargames -->
+  <g transform="translate(24, 64)">
+    <rect x="0" y="0" width="278" height="184" rx="8" fill="#090d16" stroke="#1e293b" stroke-width="1" />
+    <rect x="0" y="0" width="278" height="4" rx="2" fill="url(#accentCyan)" />
+    <text x="16" y="28" fill="#22d3ee" font-size="13" font-weight="bold" class="mono">01 / BINARY EXPLOITATION</text>
+    <text x="16" y="50" fill="#e2e8f0" font-size="12" font-weight="bold" class="sans">pwn.college (Program Security)</text>
+    <text x="16" y="67" fill="#94a3b8" font-size="11" class="mono">• Shellcode Injection &amp; NULL-Free</text>
+    <text x="16" y="83" fill="#94a3b8" font-size="11" class="mono">• NOP Sleds &amp; PIE Bypass</text>
+    <text x="16" y="99" fill="#94a3b8" font-size="11" class="mono">• Tricky Control Hijack (ROP/GDB)</text>
+
+    <text x="16" y="124" fill="#e2e8f0" font-size="12" font-weight="bold" class="sans">OverTheWire &amp; HTB Pwn</text>
+    <text x="16" y="141" fill="#94a3b8" font-size="11" class="mono">• Narnia (Lvl 0–8): Stack/FmtStr</text>
+    <text x="16" y="157" fill="#94a3b8" font-size="11" class="mono">• Leviathan (Lvl 0–7): SetUID/Ptrace</text>
+    <text x="16" y="173" fill="#94a3b8" font-size="11" class="mono">• HTB TryOut: Abyss (Buffer Ovf)</text>
+  </g>
+
+  <!-- Card 2: Network Enumeration & CPTS -->
+  <g transform="translate(321, 64)">
+    <rect x="0" y="0" width="278" height="184" rx="8" fill="#090d16" stroke="#1e293b" stroke-width="1" />
+    <rect x="0" y="0" width="278" height="4" rx="2" fill="url(#accentGreen)" />
+    <text x="16" y="28" fill="#34d399" font-size="13" font-weight="bold" class="mono">02 / CPTS &amp; ENUMERATION</text>
+    <text x="16" y="50" fill="#e2e8f0" font-size="12" font-weight="bold" class="sans">Host &amp; Service Footprinting</text>
+    <text x="16" y="67" fill="#94a3b8" font-size="11" class="mono">• SMB / NFS / RPCclient / Enum4Linux</text>
+    <text x="16" y="83" fill="#94a3b8" font-size="11" class="mono">• DNS Zone Transfers &amp; Subdomains</text>
+    <text x="16" y="99" fill="#94a3b8" font-size="11" class="mono">• SNMP, SMTP, IMAP/POP3, FTP</text>
+    <text x="16" y="115" fill="#94a3b8" font-size="11" class="mono">• MSSQL &amp; MySQL Service Auditing</text>
+
+    <text x="16" y="140" fill="#e2e8f0" font-size="12" font-weight="bold" class="sans">Network Recon &amp; Evasion</text>
+    <text x="16" y="157" fill="#94a3b8" font-size="11" class="mono">• Nmap NSE &amp; Firewall/IDS Evasion</text>
+    <text x="16" y="173" fill="#94a3b8" font-size="11" class="mono">• HTB Machines &amp; PrivEsc Playbooks</text>
+  </g>
+
+  <!-- Card 3: CTF Forensics, Crypto & Low-Level -->
+  <g transform="translate(618, 64)">
+    <rect x="0" y="0" width="278" height="184" rx="8" fill="#090d16" stroke="#1e293b" stroke-width="1" />
+    <rect x="0" y="0" width="278" height="4" rx="2" fill="url(#accentPurple)" />
+    <text x="16" y="28" fill="#a855f7" font-size="13" font-weight="bold" class="mono">03 / CTF &amp; LOW-LEVEL</text>
+    <text x="16" y="50" fill="#e2e8f0" font-size="12" font-weight="bold" class="sans">GEMASTIK 2026 Write-Ups</text>
+    <text x="16" y="67" fill="#94a3b8" font-size="11" class="mono">• Fokus Kripto: Matrix &amp; AES-ECB</text>
+    <text x="16" y="83" fill="#94a3b8" font-size="11" class="mono">• VS Code Ext: PCAP HTTP &amp; Malware</text>
+
+    <text x="16" y="108" fill="#e2e8f0" font-size="12" font-weight="bold" class="sans">x86-64 &amp; Linux Internals</text>
+    <text x="16" y="125" fill="#94a3b8" font-size="11" class="mono">• Registers, Stack Frame, Syscalls</text>
+    <text x="16" y="141" fill="#94a3b8" font-size="11" class="mono">• C: execve, setreuid, Format String</text>
+    <text x="16" y="157" fill="#94a3b8" font-size="11" class="mono">• Debugging: GDB, strace, ltrace</text>
+    <text x="16" y="173" fill="#94a3b8" font-size="11" class="mono">• Shellcode DB &amp; Pwn Templates</text>
+  </g>
+</svg>
+
