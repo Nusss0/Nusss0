@@ -55,6 +55,22 @@ def fetch_readme_summary(repo_name: str) -> str:
     return ""
 
 
+def resolve_renamed_repo(old_name: str) -> str | None:
+    """
+    If a repo was renamed on GitHub, GET /repos/{owner}/{old_name} follows the 301
+    redirect and returns the repo metadata with the new 'name'.
+    If it was deleted (or is private without access), it raises 404 and returns None.
+    """
+    try:
+        data = github_get(f"https://api.github.com/repos/{USERNAME}/{old_name}")
+        new_name = data.get("name")
+        if new_name and not data.get("private"):
+            return new_name
+    except Exception:
+        pass
+    return None
+
+
 def main():
     with open(README_PATH, "r", encoding="utf-8") as f:
         readme = f.read()
@@ -69,33 +85,62 @@ def main():
 
     # Parse existing rows so custom names, overviews, and ordering are preserved
     row_regex = re.compile(
-        r"^\|\s*\[.*?\]\(https://github\.com/"
+        r"^\|\s*\[(.*?)\]\(https://github\.com/"
         + re.escape(USERNAME)
         + r"/([^)\s/]+)\)\s*\|\s*(.*?)\s*\|$",
         re.M,
     )
     existing_rows = {}
+    existing_overviews = {}
     existing_order = []
     for m in row_regex.finditer(existing_block):
-        rname = m.group(1)
+        rname = m.group(2)
         existing_rows[rname] = m.group(0)
+        existing_overviews[rname] = m.group(3)
         existing_order.append(rname)
 
     repos = github_get(
         f"https://api.github.com/users/{USERNAME}/repos?per_page=100&sort=created&direction=desc"
     )
-    EXCLUDED = {USERNAME.lower(), "offsecvault", "dotfiles"}
+    EXCLUDED = {USERNAME.lower(), "offsecvault", "dotfiles", "academics"}
+    # Keep currently-private repos until they are switched to public
+    PRIVATE_KEEP = {
+        "Tubes_IF2130_OSaka",
+        "Tubes_IF2230_Cisco-Lite",
+        "Tubes_IF2123_SingularLib",
+        "Tubes_IF2110_Blueddit",
+        "Tubes_IF2010_Nimons-Catan",
+    }
     public_repos = {
         r["name"]: r
         for r in repos
         if not r.get("private") and r["name"].lower() not in EXCLUDED
     }
 
-    # Find new repos not yet in the table
-    new_repo_names = [name for name in public_repos if name not in existing_rows]
+    kept_existing = []
+    handled_repos = set()
 
-    # Build final rows: put newly created project repos at the top,
-    # and keep all existing project repos that still exist on GitHub
+    for name in existing_order:
+        if name in public_repos:
+            kept_existing.append((name, existing_rows[name]))
+            handled_repos.add(name)
+        else:
+            # Check if the repository was renamed on GitHub
+            renamed_to = resolve_renamed_repo(name)
+            if renamed_to and renamed_to in public_repos:
+                new_label = clean_repo_label(renamed_to)
+                overview = existing_overviews[name]
+                new_link = f"[**{new_label}**](https://github.com/{USERNAME}/{renamed_to})"
+                kept_existing.append((renamed_to, f"| {new_link} | {overview} |"))
+                handled_repos.add(renamed_to)
+            elif name in PRIVATE_KEEP:
+                kept_existing.append((name, existing_rows[name]))
+                handled_repos.add(name)
+            # Otherwise: the repository was deleted on GitHub, so omit it
+
+    # Find newly created repos not yet in the table
+    new_repo_names = [name for name in public_repos if name not in handled_repos]
+
     new_rows_rendered = []
     for name in new_repo_names:
         r = public_repos[name]
@@ -110,10 +155,6 @@ def main():
 
         link = f"[**{label}**](https://github.com/{USERNAME}/{name})"
         new_rows_rendered.append((name, f"| {link} | {desc} |"))
-
-    kept_existing = [
-        (name, existing_rows[name]) for name in existing_order
-    ]
 
     combined = new_rows_rendered + kept_existing
 
