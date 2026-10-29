@@ -38,6 +38,7 @@
 
 | Repository | Overview |
 | :--- | :--- |
+| [**Mandelbrot Set Plotting**](https://github.com/Nusss0/Tucil_IF3130_Mandelbrot-Set-Plotting) | Mandelbrot Set Plotting project repository |
 | [**Arion Compiler**](https://github.com/Nusss0/Tubes-IF2224-ArionCompiler) | Compiler for the Arion programming language (DFA Lexer, Recursive Descent Parser, Semantic AST) |
 | [**OSaka**](https://github.com/Nusss0/Tubes_IF2130_OSaka) | Custom homemade operating system built from scratch in C |
 | [**Cisco Lite**](https://github.com/Nusss0/Tubes_IF2230_Cisco-Lite) | Custom network simulation and low-level networking implementation in C |
