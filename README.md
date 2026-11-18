@@ -38,6 +38,7 @@
 
 | Repository | Overview |
 | :--- | :--- |
+| [**arsenal**](https://github.com/Nusss0/arsenal) | arsenal project repository |
 | [**Mandelbrot Set Plotting**](https://github.com/Nusss0/Tucil_IF3130_Mandelbrot-Set-Plotting) | Mandelbrot Set Plotting project repository |
 | [**Arion Compiler**](https://github.com/Nusss0/Tubes-IF2224-ArionCompiler) | Compiler for the Arion programming language (DFA Lexer, Recursive Descent Parser, Semantic AST) |
 | [**OSaka**](https://github.com/Nusss0/Tubes_IF2130_OSaka) | Custom homemade operating system built from scratch in C |
